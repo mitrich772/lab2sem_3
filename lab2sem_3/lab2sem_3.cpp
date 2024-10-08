@@ -17,7 +17,7 @@ double get_PI() {
 
 class Figure {
 public:
-    static int numberOfFigures;
+    static inline int numberOfFigures = 0;
     double* geometry;
     double angle;
 
@@ -27,8 +27,6 @@ public:
     virtual string toString() = 0;
     virtual ~Figure() = default;
 };
-
-int Figure::numberOfFigures = 0;
 
 class Circle : public Figure {
 public:
@@ -372,7 +370,7 @@ T averageOfArray(T arr[], int size) {
     for (int i = 0; i < size; i++) {
         sum = sum + arr[i];  
     }
-    return sum / size;
+    return sum / T(size);
       
 }
 
